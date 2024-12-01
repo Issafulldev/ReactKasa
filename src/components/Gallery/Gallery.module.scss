@@ -1,0 +1,59 @@
+.carrousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carrouselImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 25px;
+  transition: opacity 0.5s ease-in-out;
+  /* Transition d'opacité pour un effet de fondu */
+  object-fit: cover;
+}
+
+.carrouselImage.active {
+  opacity: 1;
+  /* L'image active est visible */
+}
+
+/* Boutons "Précédent" et "Suivant" */
+.previous,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.previous {
+  left: 10px;
+  /* Positionner à gauche */
+}
+
+.next {
+  right: 10px;
+  /* Positionner à droite */
+}
+
+.previous img,
+.next img {
+  width: 40px;
+  /* Taille des icônes des boutons */
+  height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .carrousel {
+    height: 300px;
+  }
+}

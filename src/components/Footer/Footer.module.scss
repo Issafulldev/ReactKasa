@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28.56px;
+  height: 209px;
+  background-color: #000;
+  position: relative;
+  width: 100%;
+}
+
+.footer img {
+  width: 122px;
+  height: 40px;
+}
+
+.footerText {
+  color: #fff;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 800px) {
+  .footerText {
+    font-size: 18px;
+  }
+}

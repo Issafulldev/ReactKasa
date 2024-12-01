@@ -1,0 +1,14 @@
+.collapsesContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 120px;
+  gap: 2rem;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .collapsesContainer {
+    padding: 20px;
+  }
+}

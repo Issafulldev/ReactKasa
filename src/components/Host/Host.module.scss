@@ -1,0 +1,40 @@
+.houseHost {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.hostInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.hostName {
+  color: #ff6060;
+  font-weight: 500;
+}
+
+.hostPicture {
+  border-radius: 50%;
+  width: 54px;
+}
+
+.host-rating {
+  width: 196px;
+  text-align: end;
+}
+
+@media screen and (max-width: 768px) {
+  .houseHost {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .hostRating {
+    text-align: start;
+  }
+}
