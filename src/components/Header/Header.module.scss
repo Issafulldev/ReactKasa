@@ -11,24 +11,20 @@
   display: flex;
   gap: 40px;
   list-style: none;
-}
 
-.links a {
-  text-decoration: none;
-  color: #ff6060;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 142.6%;
-  border-bottom: 1px solid transparent;
-}
+  a {
+    text-decoration: none;
+    color: #ff6060;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 142.6%;
+    border-bottom: 1px solid transparent;
 
-.active {
-  text-decoration: underline !important;
-}
-
-.inactive {
-  text-decoration: none;
+    &.active {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -43,10 +39,10 @@
 
   .links {
     gap: 20px;
-  }
 
-  .links a {
-    font-size: 12px;
-    text-transform: uppercase;
+    a {
+      font-size: 12px;
+      text-transform: uppercase;
+    }
   }
 }

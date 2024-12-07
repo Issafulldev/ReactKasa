@@ -5,7 +5,9 @@ const Banner = ({ imageSrc, text, className }) => {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(${imageSrc})`,
   };
   return (
-    <div className={`${styles.banner} ${className}`} style={bannerStyle}>
+    <div
+      className={`${styles.banner} ${className}`}
+      style={bannerStyle}>
       <h1>{text}</h1>
     </div>
   );
