@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Header from '@/components/Header/Header'
 import Gallery from '@/components/Gallery/Gallery'
 import Host from '@/components/Host/Host'
@@ -11,15 +10,12 @@ import styles from '../Logement/Logement.module.scss'
 
 const Logement = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const house = item.find((item) => item.id === id);
 
-  useEffect(() => {
-    if (!house) {
-      navigate('/404');
-    }
-  }, [house, navigate]);
+  if (!house) {
+    return null;
+  }
 
   const {
     title,
