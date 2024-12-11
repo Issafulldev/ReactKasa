@@ -16,7 +16,7 @@ const Error = () => {
           </p>
         </div>
         <div className={styles.backHome}>
-          <Link to="/" style={{ color: "#ff6060", textDecoration: "none" }}>
+          <Link to="/" className={styles.backHomeLink}>
             Retourner sur la page d'accueil.
           </Link>
         </div>
