@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from '@/components/Header/Header'
 import Gallery from '@/components/Gallery/Gallery'
 import Host from '@/components/Host/Host'
@@ -10,12 +11,20 @@ import styles from '../Logement/Logement.module.scss'
 
 const Logement = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const house = item.find((item) => item.id === id);
 
-  if (!house) {
-    return null;
-  }
+  // Redirection vers la page d'erreur si le logement n'existe pas
+  useEffect(() => {
+    if (!house) {
+      navigate('*'); // Redirige vers la page d'erreur
+    }
+  }, [house, navigate]);
+
+  // Retourne null pour éviter une erreur de déstructuration pendant la redirection
+  if (!house) return navigate('/');
+
 
   const {
     title,
