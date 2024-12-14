@@ -25,7 +25,6 @@ const Logement = () => {
   // Retourne null pour éviter une erreur de déstructuration pendant la redirection
   if (!house) return navigate('/');
 
-
   const {
     title,
     description,
