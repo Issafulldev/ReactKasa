@@ -90,4 +90,9 @@
   .houseCollapse {
     flex-direction: column;
   }
+
+  .ratehostContainer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 }
