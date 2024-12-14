@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import item from '@/data/logements.json';
 import styles from '../Gallery/Gallery.module.scss';
 import next from '@/assets/images/next.svg';
 import previous from '@/assets/images/previous.svg'
@@ -45,6 +43,9 @@ const Gallery = ({ pictures }) => {
             }`}
         />
       ))}
+      <div className={styles.counter}>
+        {currentImageIndex + 1}/{pictures.length}
+      </div>
       <button className={styles.next} onClick={goToNext}>
         <img src={next} alt="Suivant" />
       </button>

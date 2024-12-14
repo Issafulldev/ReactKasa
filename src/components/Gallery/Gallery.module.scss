@@ -23,6 +23,13 @@
   /* L'image active est visible */
 }
 
+.counter {
+  position: absolute;
+  color: #fff;
+  bottom: 5%;
+  right: 50%;
+}
+
 /* Boutons "Précédent" et "Suivant" */
 .previous,
 .next {

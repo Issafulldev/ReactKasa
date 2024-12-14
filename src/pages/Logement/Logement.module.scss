@@ -6,6 +6,13 @@
   width: 100%;
 }
 
+.ratehostContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
 .houseHeader {
   display: flex;
   justify-content: space-between;

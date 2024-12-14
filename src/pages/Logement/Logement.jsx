@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Header from '@/components/Header/Header'
 import Gallery from '@/components/Gallery/Gallery'
 import Host from '@/components/Host/Host'
+import Rating from '@/components/Rating/Rating'
 import Tag from '@/components/Tag/Tag'
 import Collapse from '@/components/Collapse/Collapse'
 import Footer from '@/components/Footer/Footer'
@@ -53,7 +54,11 @@ const Logement = () => {
             </p>
             <Tag tags={tags} />
           </div>
-          <Host firstName={firstName} lastName={lastName} picture={picture} rating={rating} />
+          <div className={styles.ratehostContainer}>
+            <Host firstName={firstName} lastName={lastName} picture={picture} />
+            <Rating rating={rating} />
+          </div>
+
         </section>
         <section className={styles.houseCollapse}>
           <Collapse title='Description'>
