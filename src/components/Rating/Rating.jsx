@@ -1,4 +1,8 @@
-const Rating = ({ rating, maxStars = 5, colorStar, emptyStar }) => {
+import colorStar from '@/assets/images/colorStar.svg'
+import emptyStar from '@/assets/images/emptyStar.svg'
+import styles from '../Rating/Rating.module.scss'
+
+const Rating = ({ rating, maxStars = 5 }) => {
   // Création d'un tableau avec `maxStars` éléments
   const stars = Array(maxStars).fill();
 
@@ -8,8 +12,8 @@ const Rating = ({ rating, maxStars = 5, colorStar, emptyStar }) => {
         <img
           key={index}
           src={index < rating ? colorStar : emptyStar}
-          alt={index < rating ? "filled star" : "empty star"}
-          style={{ width: '24px', height: '24px', marginRight: '5px' }} // Style par défaut (personnalisable)
+          alt={index < rating ? 'filled star' : 'empty star'}
+          className={styles.star}
         />
       ))}
     </div>
