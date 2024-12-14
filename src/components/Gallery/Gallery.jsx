@@ -5,11 +5,7 @@ import styles from '../Gallery/Gallery.module.scss';
 import next from '@/assets/images/next.svg';
 import previous from '@/assets/images/previous.svg'
 
-const Gallery = () => {
-  const { id } = useParams(); // Récupération id logement
-  const house = item.find(item => item.id === id); // Matcher logement
-
-  const { pictures } = house; // Extraction des images
+const Gallery = ({ pictures }) => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Index de l'image affichée
 

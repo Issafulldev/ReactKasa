@@ -26,6 +26,7 @@ const Logement = () => {
   if (!house) return navigate('/');
 
   const {
+    pictures,
     title,
     description,
     location,
@@ -41,7 +42,7 @@ const Logement = () => {
     <>
       <Header />
       <main className={styles.houseMain}>
-        <Gallery />
+        <Gallery pictures={pictures} />
         <section className={styles.houseHeader}>
           <div className={styles.houseInfos}>
             <h1 className={styles.houseTitle}>
