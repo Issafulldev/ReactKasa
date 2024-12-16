@@ -1,29 +1,29 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from '@/assets/images/LOGO.svg';
 import styles from './Header.module.scss';
 
+const NavItem = ({ to, children, isDefaultActive }) => (
+  <li>
+    <NavLink
+      to={to}
+      className={({ isActive }) => (isActive || isDefaultActive ? styles.active : styles.inactive)}
+    >
+      {children}
+    </NavLink>
+  </li>
+);
+
 const Header = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header className={styles.header}>
-      <img src={Logo} alt="Logo du site" />
-      <ul className={styles.links}>
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.active : styles.inactive)}
-          >
-            Accueil
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/propos"
-            className={({ isActive }) => (isActive ? styles.active : styles.inactive)}
-          >
-            À propos
-          </NavLink>
-        </li>
+    <header className={styles.headerContainer}>
+      <img src={Logo} alt="Logo du site - Retour à l'accueil" />
+      <ul className={styles.navLinks}>
+        <NavItem to="/" isDefaultActive={isHomePage}>Accueil</NavItem>
+        <NavItem to="/propos">À propos</NavItem>
       </ul>
     </header>
   );
