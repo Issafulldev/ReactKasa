@@ -20,35 +20,46 @@ const Gallery = ({ pictures }) => {
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000);
+    // Auto-défilement toutes les 3 secondes si plus d'une image
+    if (pictures.length > 1) {
+      const intervalId = setInterval(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
 
-    return () => clearInterval(intervalId);
+      return () => clearInterval(intervalId);
+    }
   }, [pictures.length]);
 
   return (
     <div className={styles.carrousel}>
-      <button className={styles.previous} onClick={goToPrevious}>
-        <img src={previous} alt="Précédent" />
-      </button>
+      {pictures.length > 1 && (
+        <button className={styles.previous} onClick={goToPrevious}>
+          <img src={previous} alt="Précédent" />
+        </button>
+      )}
+
       {pictures.map((picture, index) => (
         <img
           key={index}
           src={picture}
           alt={`Image ${index + 1}`}
-          className={`${styles.carrouselImage} ${currentImageIndex === index ? styles.active : ""
-            }`}
+          className={`${styles.carrouselImage} ${currentImageIndex === index ? styles.active : ''}`}
         />
       ))}
-      <div className={styles.counter}>
-        {currentImageIndex + 1}/{pictures.length}
-      </div>
-      <button className={styles.next} onClick={goToNext}>
-        <img src={next} alt="Suivant" />
-      </button>
+
+      {pictures.length > 1 && (
+        <div className={styles.counter}>
+          {currentImageIndex + 1}/{pictures.length}
+        </div>
+      )}
+
+      {pictures.length > 1 && (
+        <button className={styles.next} onClick={goToNext}>
+          <img src={next} alt="Suivant" />
+        </button>
+      )}
     </div>
   );
 };

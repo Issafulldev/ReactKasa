@@ -19,7 +19,7 @@ const Logement = () => {
   // Redirection vers la page d'erreur si le logement n'existe pas
   useEffect(() => {
     if (!house) {
-      navigate('*'); // Redirige vers la page d'erreur
+      navigate('/404'); // Redirige vers la page d'erreur
     }
   }, [house, navigate]);
 
